@@ -68,7 +68,7 @@ export const Achievements = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.4 }}
               key={index}
-              className="group bg-card border border-card-border rounded-2xl p-6 md:p-8 hover:border-purple-500/30 dark:hover:border-purple-400/50 transition-colors shadow-sm dark:shadow-none"
+              className="group bg-card border border-border/50 rounded-2xl p-6 md:p-8 hover:border-purple-500/30 hover:shadow-[0_8px_30px_rgb(168,85,247,0.12)] dark:hover:shadow-[0_8px_30px_rgb(192,132,252,0.12)] hover:-translate-y-1 transition-all duration-300 shadow-sm"
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center gap-3">

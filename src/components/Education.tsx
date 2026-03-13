@@ -54,7 +54,7 @@ export const Education = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="bg-card border border-card-border rounded-2xl p-6 md:p-8 hover:-translate-y-2 transition-transform duration-300 relative group overflow-hidden shadow-sm dark:shadow-none"
+              className="bg-card border border-border/50 rounded-2xl p-6 md:p-8 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgb(168,85,247,0.12)] dark:hover:shadow-[0_8px_30px_rgb(192,132,252,0.12)] transition-all duration-300 relative group overflow-hidden shadow-sm"
             >
               {/* Hover gradient background */}
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 dark:from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

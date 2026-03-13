@@ -79,7 +79,7 @@ export const Skills = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-card border border-card-border rounded-2xl p-6 hover:border-blue-500/30 dark:hover:border-blue-400/50 transition-colors shadow-sm dark:shadow-none"
+                className="bg-card border border-border/50 rounded-2xl p-6 hover:border-blue-500/30 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgb(59,130,246,0.12)] dark:hover:shadow-[0_8px_30px_rgb(96,165,250,0.12)] transition-all duration-300 shadow-sm"
               >
                 <div className="flex items-center gap-4 mb-6">
                   <div className="p-3 bg-slate-50 dark:bg-black/50 rounded-lg border border-slate-200 dark:border-white/5">
@@ -112,7 +112,7 @@ export const Skills = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-purple-50 dark:from-purple-500/10 to-transparent border border-purple-200 dark:border-purple-500/20 rounded-2xl p-6 hover:border-purple-300 dark:hover:border-purple-500/50 transition-colors flex gap-4 items-start relative overflow-hidden group shadow-sm dark:shadow-none"
+                  className="bg-gradient-to-br from-purple-50 dark:from-purple-500/10 to-transparent border border-purple-200 dark:border-purple-500/20 rounded-2xl p-6 hover:border-purple-300 hover:shadow-[0_8px_30px_rgb(168,85,247,0.12)] dark:hover:shadow-[0_8px_30px_rgb(192,132,252,0.12)] hover:-translate-y-1 transition-all duration-300 flex gap-4 items-start relative overflow-hidden group shadow-sm"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   

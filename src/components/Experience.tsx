@@ -71,7 +71,7 @@ export const Experience = () => {
               {/* Timeline dot */}
               <div className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]" />
               
-              <div className="bg-card border border-card-border rounded-2xl p-6 md:p-8 hover:border-blue-500/30 dark:hover:border-blue-400/30 transition-colors group shadow-sm dark:shadow-none">
+              <div className="bg-card border border-border/50 rounded-2xl p-6 md:p-8 hover:border-blue-500/30 hover:shadow-[0_8px_30px_rgb(59,130,246,0.12)] dark:hover:shadow-[0_8px_30px_rgb(96,165,250,0.12)] hover:-translate-y-1 transition-all duration-300 group shadow-sm">
                 <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-4">
                   <div>
                     <h3 className="text-xl md:text-2xl font-bold text-foreground group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">

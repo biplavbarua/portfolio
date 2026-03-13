@@ -5,6 +5,7 @@
   --color-foreground: var(--fg-color);
   --color-card: var(--card-bg);
   --color-card-border: var(--card-border);
+  --color-border: var(--card-border);
   --color-muted: var(--text-muted);
 }
 

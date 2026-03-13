@@ -102,7 +102,7 @@ export const Projects = () => {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
                 key={project.title}
-                className="group relative bg-card border border-card-border rounded-2xl overflow-hidden hover:border-purple-500/30 dark:hover:border-purple-400/50 transition-colors flex flex-col h-full shadow-sm dark:shadow-none"
+                className="group relative bg-card border border-border/50 rounded-2xl overflow-hidden hover:border-purple-500/30 hover:shadow-[0_8px_30px_rgb(168,85,247,0.12)] dark:hover:shadow-[0_8px_30px_rgb(192,132,252,0.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col h-full shadow-sm"
               >
                 <div className="relative h-48 overflow-hidden">
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors z-10" />
