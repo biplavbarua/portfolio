@@ -68,7 +68,7 @@ src/
 
 ## 🔗 Links
 
-- **Live Site**: _Coming soon_
+- **Live Site**: [biplavbarua.dev](https://biplavbarua.dev)
 - **GitHub**: [github.com/biplavbarua](https://github.com/biplavbarua)
 - **LinkedIn**: [linkedin.com/in/biplavbarua](https://linkedin.com/in/biplavbarua)
 

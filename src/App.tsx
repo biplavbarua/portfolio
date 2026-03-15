@@ -1,31 +1,59 @@
+import { lazy, Suspense } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { Experience } from './components/Experience';
-import { Education } from './components/Education';
-import { Projects } from './components/Projects';
-import { Achievements } from './components/Achievements';
-import { Certifications } from './components/Certifications';
-import { Skills } from './components/Skills';
-import { About } from './components/About';
 import { Footer } from './components/Footer';
 import { ThemeProvider } from './components/ThemeProvider';
+import { ParticleBackground } from './components/ParticleBackground';
+
+// Lazy load below-the-fold components and pages
+const About = lazy(() => import('./components/About').then(module => ({ default: module.About })));
+const Experience = lazy(() => import('./components/Experience').then(module => ({ default: module.Experience })));
+const Projects = lazy(() => import('./components/Projects').then(module => ({ default: module.Projects })));
+const Achievements = lazy(() => import('./components/Achievements').then(module => ({ default: module.Achievements })));
+const Certifications = lazy(() => import('./components/Certifications').then(module => ({ default: module.Certifications })));
+const Skills = lazy(() => import('./components/Skills').then(module => ({ default: module.Skills })));
+const Contact = lazy(() => import('./components/Contact').then(module => ({ default: module.Contact })));
+const NotFound = lazy(() => import('./components/NotFound').then(module => ({ default: module.NotFound })));
+const Uses = lazy(() => import('./components/Uses').then(module => ({ default: module.Uses })));
+
+const LoadingSpinner = () => (
+  <div className="flex items-center justify-center min-h-[50vh]">
+    <div className="w-8 h-8 rounded-full border-b-2 border-emerald-500 animate-spin"></div>
+  </div>
+);
+
+const Home = () => (
+  <div className="pt-16">
+    <Hero />
+    <Suspense fallback={<LoadingSpinner />}>
+      <About />
+      <Experience />
+      <Projects />
+      <Achievements />
+      <Certifications />
+      <Skills />
+      <Contact />
+    </Suspense>
+  </div>
+);
 
 function App() {
   return (
-    <ThemeProvider>
-      <div className="min-h-screen bg-background text-foreground font-sans transition-colors duration-300">
-        <Navbar />
-        <main>
-          <Hero />
-          <Experience />
-          <Education />
-          <Projects />
-          <Achievements />
-          <Certifications />
-          <Skills />
-          <About />
-        </main>
-        <Footer />
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <div className="relative min-h-screen bg-transparent text-zinc-900 dark:text-zinc-50 transition-colors duration-300">
+        <ParticleBackground />
+        <div className="relative z-10">
+          <Navbar />
+          <Suspense fallback={<LoadingSpinner />}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/uses" element={<Uses />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+            <Footer />
+          </Suspense>
+        </div>
       </div>
     </ThemeProvider>
   );

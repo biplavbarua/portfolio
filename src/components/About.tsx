@@ -80,7 +80,7 @@ export const About = () => {
                 </div>
                 
                 <a
-                  href="mailto:biplavbarua.dev@gmail.com"
+                  href="mailto:baruabiplav16@yahoo.in"
                   className="inline-flex shrink-0 items-center justify-center gap-2 px-6 py-3 bg-emerald-600 text-white font-medium rounded-xl hover:bg-emerald-700 transition-colors duration-300 w-full sm:w-auto"
                 >
                   <Mail className="w-5 h-5" />
