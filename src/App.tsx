@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Footer } from './components/Footer';
@@ -23,6 +24,24 @@ const LoadingSpinner = () => (
   </div>
 );
 
+const pageTransition = {
+  initial: { opacity: 0, y: 12 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -12 },
+};
+
+const PageWrapper = ({ children }: { children: React.ReactNode }) => (
+  <motion.div
+    variants={pageTransition}
+    initial="initial"
+    animate="animate"
+    exit="exit"
+    transition={{ duration: 0.25, ease: 'easeInOut' }}
+  >
+    {children}
+  </motion.div>
+);
+
 const Home = () => (
   <div className="pt-16">
     <Hero />
@@ -39,6 +58,8 @@ const Home = () => (
 );
 
 function App() {
+  const location = useLocation();
+
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <div className="relative min-h-screen bg-transparent text-zinc-900 dark:text-zinc-50 transition-colors duration-300">
@@ -46,11 +67,13 @@ function App() {
         <div className="relative z-10">
           <Navbar />
           <Suspense fallback={<LoadingSpinner />}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/uses" element={<Uses />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+            <AnimatePresence mode="wait">
+              <Routes location={location} key={location.pathname}>
+                <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
+                <Route path="/uses" element={<PageWrapper><Uses /></PageWrapper>} />
+                <Route path="*" element={<PageWrapper><NotFound /></PageWrapper>} />
+              </Routes>
+            </AnimatePresence>
             <Footer />
           </Suspense>
         </div>
